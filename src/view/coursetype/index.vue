@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="search-con search-con-top">
-      <Input class="search-input" placeholder="输入关键字搜索"/>
-      <Button class="search-btn" type="primary">搜索</Button>
-      <Button class="search-btn" type="primary" to="videoadd">添加</Button>
+       <Button class="search-btn" type="primary" to="videoadd">添加</Button>
     </div>
     <Table
       border
@@ -17,23 +15,7 @@
       @on-selection-change="selectTableChange"
       @on-row-click="onRowClick"
     ></Table>
-    <div class="search-con search-con-top">
-      <Row>
-        <Col span="10">
-          <Page
-            show-total
-            class="paging"
-            show-sizer
-            show-elevator
-            size="small"
-            :total="DataTable.total"
-            :page-size="DataTable.Pagesize"
-            @on-change="changepage"
-            @on-page-size-change="pages"
-          ></Page>
-        </Col>
-      </Row>
-    </div>
+    
   </div>
 </template>
 <style>
@@ -53,7 +35,7 @@ export default {
   created() {},
   data() {
     return {
-      tableHeight: window.innerHeight - 250,
+      tableHeight: window.innerHeight - 200,
       loading: false,
       tableSize: "small",
       columns1: [
@@ -63,13 +45,7 @@ export default {
           align: "center",
           key: "CourseID"
         },
-        {
-          title: "视频名称",
-          key: "name",
-          sortable: true,
-         
-          ellipsis: true
-        },
+       
         {
           title: "阶段",
           key: "CourseName",
@@ -106,22 +82,8 @@ export default {
           ellipsis: true,
           align: "center"
         },
-        {
-          title: "创建时间",
-          key: "CreateTime",
-          sortable: true,
-          align: "center",
-          render: (h, params) => {
-            console.log(this);
-
-            let t = `${toDateStr(
-              params.row.CreateTime.replace("/Date(", "").replace(")/", ""),
-              "yyyy-MM-dd"
-            )}`;
-
-            return h("span", t);
-          }
-        },
+        
+       
         {
           title: "操作",
           key: "action",

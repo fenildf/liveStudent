@@ -9,9 +9,10 @@ export default {
         mes: error.message,
         url: window.location.href
       }
-      // Vue.nextTick(() => {
-      //   store.dispatch('addErrorLog', info)
-      // })
+      Vue.nextTick(() => {
+        //store.dispatch('addErrorLog', info)
+        console.error("errorLog",info);
+      })
     }
   }
 }

@@ -31,7 +31,7 @@
       <editor ref="editor" :value="formItem.Description"/>
     </FormItem>
     <FormItem>
-      <Button type="primary">Submit</Button>
+      <Button type="primary">提交</Button>
       <Button style="margin-left: 8px" @click="closeBtn">关闭</Button>
     </FormItem>
   </Form>

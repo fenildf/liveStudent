@@ -1,6 +1,6 @@
 <template>
   <div>
-    home
+  <img src="../../../assets/images/home2.jpg" width="100%">
     
   </div>
 </template>
@@ -26,4 +26,5 @@ export default {
 .count-style{
   font-size: 50px;
 }
+
 </style>

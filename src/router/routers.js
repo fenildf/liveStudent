@@ -170,7 +170,7 @@ export default [
         title: '课程分类管理',
         hideInMenu: false
       },
-      component: () => import('@/view/course/index.vue')
+      component: () => import('@/view/coursetype/index.vue')
     },
 
     {
