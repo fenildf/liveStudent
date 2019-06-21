@@ -4,21 +4,11 @@
       <Input v-model="formItem.CourseName" placeholder="课程名称"></Input>
     </FormItem>
     <FormItem label="课程分类">
-      <tree-select
-        style="width: 353px;"
-        check-strictly
-        v-model="CourseTypeTreeDataSelect"
-        :data="CourseTypeTreeData"
-      ></tree-select>
-    </FormItem>
-    <FormItem label="课程类型">
-      <Select style="width:353px;">
-        <Option>基础</Option>
-        <Option>提高</Option>
-        <Option>冲刺</Option>
+      <Select class="tree-select" style="width:353px;">
+        <v-jstree :data="treeData" show-checkbox allow-batch whole-row draggable></v-jstree>
       </Select>
     </FormItem>
-
+    
     <FormItem label="视频信息">
       <Row>
         <Col span="1">
@@ -37,18 +27,17 @@
   </Form>
 </template>
 <script>
-import TreeSelect from "_c/tree-select";
 import Editor from "_c/editor";
 import { mapMutations } from "vuex";
 import { log } from "util";
 import UploadVideo from "@/components/video/upload-video.vue";
 import { getCourseModel, getCourseTypes } from "@/api/course";
 import { all } from "q";
-
+import VJstree from "@/components/tree/tree.vue";
 export default {
   components: {
     Editor,
-    TreeSelect,
+    VJstree,
     UploadVideo
   },
   computed: {},
@@ -115,7 +104,94 @@ export default {
         }
       ],
       CourseTypeTreeData: [],
-      CourseTypeTreeDataSelect: []
+      CourseTypeTreeDataSelect: [],
+        treeData: [
+        {
+          id: 0,
+          text: "小学",
+          value: "0",
+          opened: true,
+          children: [
+            {
+              id: 1,
+              text: "语文",
+              value: "initially selected",
+              opened: true,
+              children: [
+                {
+                  id: 1,
+                  text: "小学语文上册",
+                  value: "initially selected", opened: true,
+                 children: [
+                        {
+                          id: 1,
+                          text: "普通班",
+                          value: "initially selected"
+                        },
+
+                        {
+                          id: 5,
+                          text: "提高班",
+                          value: "custom icon"
+                        },
+                         {
+                          id: 5,
+                          text: "冲刺班",
+                          value: "custom icon"
+                        }
+                      ]
+                },
+
+                {
+                  id: 5,
+                  text: "小学语文下册",
+                  value: "custom icon"
+                }
+              ]
+            },
+
+            {
+              id: 5,
+              text: "数学",
+              value: "custom icon"
+            },
+            {
+              id: 5,
+              text: "英语",
+              value: "custom icon"
+            }
+          ]
+        },
+        {
+          id: 6,
+          text: "初中",
+          value: "6",
+          opened: true,
+          children: [
+            {
+              id: 1,
+              text: "语文",
+              value: "initially selected"
+            },
+
+            {
+              id: 5,
+              text: "数学",
+              value: "custom icon"
+            },
+            {
+              id: 5,
+              text: "英语",
+              value: "custom icon"
+            },
+            {
+              id: 5,
+              text: "物理",
+              value: "custom icon"
+            }
+          ]
+        }
+      ]
     };
   },
   methods: {

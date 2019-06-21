@@ -56,7 +56,7 @@ export default [
     path: '/videolibrary',
     name: 'videolibrary',
     meta: {
-      icon: 'md-menu',
+      icon: 'md-videocam',
       title: '视频库'
     },
     component: Main,
@@ -107,7 +107,7 @@ export default [
     path: '/course',
     name: 'course',
     meta: {
-      icon: 'md-menu',
+      icon: 'ios-ribbon-outline', 
       title: '课程'
     },
     component: Main,
@@ -116,7 +116,7 @@ export default [
         path: 'manage',
         name: 'manage',
         meta: {
-          icon: 'md-videocam',
+          icon: 'ios-ribbon-outline', 
           title: '课程管理',
           hideInMenu: false
         },
@@ -151,13 +151,14 @@ export default [
     ]
   },
   //-------------课程路由结束
+
 //------------课程分类路由开始
 
 {
   path: '/coursetype',
   name: 'coursetype',
   meta: {
-    icon: 'md-menu',
+    icon: 'md-reorder',
     title: '课程分类'
   },
   component: Main,
@@ -166,7 +167,7 @@ export default [
       path: 'typemanage',
       name: 'typemanage',
       meta: {
-        icon: 'md-videocam',
+        icon: 'md-reorder',
         title: '课程分类管理',
         hideInMenu: false
       },
@@ -208,7 +209,7 @@ export default [
   path: '/users',
   name: 'users',
   meta: {
-    icon: 'md-menu',
+    icon: 'ios-contacts', 
     title: '会员管理'
   },
   component: Main,
@@ -217,7 +218,7 @@ export default [
       path: 'usersmanage',
       name: 'usersmanage',
       meta: {
-        icon: 'md-videocam',
+        icon: 'ios-contacts', 
         title: '会员管理',
         hideInMenu: false
       },
@@ -226,7 +227,79 @@ export default [
   ]
 },
 //-------------会员路由结束
-  {
+//订单路由开始
+{
+  path: '/order',
+  name: 'order',
+  meta: {
+    icon: 'md-card', 
+    title: '订单'
+  },
+  component: Main,
+  children: [
+    {
+      path: 'ordermanage',
+      name: 'ordermanage',
+      meta: {
+        icon: 'md-card', 
+        title: '订单管理',
+        hideInMenu: false
+      },
+      component: () => import('@/view/order/index.vue')
+    },
+  ]
+},
+//订单路由结束
+
+//会员卡设置开始
+{
+  path: '/membercard',
+  name: 'membercard',
+  meta: {
+    icon: 'ios-card-outline', 
+    title: '会员卡'
+  },
+  component: Main,
+  children: [
+    {
+      path: 'membercardmanage',
+      name: 'membercardmanage',
+      meta: {
+        icon: 'ios-card-outline', 
+        title: '会员卡设置',
+        hideInMenu: false
+      },
+      component: () => import('@/view/membercard/index.vue')
+    },
+  ]
+},
+////会员卡设置结束
+
+//管理员列表开始
+{
+  path: '/adminlist',
+  name: 'adminlist',
+  meta: {
+    icon: 'md-apps',
+    title: '管理员列表'
+  },
+  component: Main,
+  children: [
+    {
+      path: 'adminlistdmanage',
+      name: 'adminlistdmanage',
+      meta: {
+        icon: 'md-apps', 
+        title: '管理员列表',
+        hideInMenu: false
+      },
+      component: () => import('@/view/adminlist/index.vue')
+    },
+  ]
+},
+ 
+//管理员列表结束
+{
     path: '/401',
     name: 'error_401',
     meta: {

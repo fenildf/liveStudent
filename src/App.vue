@@ -24,4 +24,8 @@ html,body{
 #app {
   .size;
 }
+.ivu-menu-item > i {
+    
+    font-size: 22px;
+}
 </style>

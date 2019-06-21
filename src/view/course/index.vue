@@ -1,13 +1,25 @@
 <template>
   <div>
     <div class="search-con search-con-top">
-      
-      <Input class="search-input" v-model="courseDataTable.searchData.CourseName" placeholder="输入关键字搜索"/>
-      <DatePicker class="search-input" type="date" placeholder="开始时间" v-model="courseDataTable.searchData.starttime"></DatePicker>至
-      <DatePicker class="search-input" type="date" placeholder="结束时间" v-model="courseDataTable.searchData.endtime"></DatePicker>
+      <Input
+        class="search-input"
+        v-model="courseDataTable.searchData.CourseName"
+        placeholder="输入关键字搜索"
+      />
+      <DatePicker
+        class="search-input"
+        type="date"
+        placeholder="开始时间"
+        v-model="courseDataTable.searchData.starttime"
+      ></DatePicker>至
+      <DatePicker
+        class="search-input"
+        type="date"
+        placeholder="结束时间"
+        v-model="courseDataTable.searchData.endtime"
+      ></DatePicker>
       <Button class="search-btn" type="primary" @click="getTableData">搜索</Button>
       <Button class="search-btn" type="primary" to="addcourse">添加</Button>
-     
     </div>
     <Table
       border
@@ -15,17 +27,14 @@
       ref="selection"
       :columns="columns1"
       :data="courseDataTable.data"
-     
       :loading="loading"
       :height="tableHeight"
       :size="tableSize"
       @on-selection-change="selectTableChange"
-       @on-row-click="onRowClick"
+      @on-row-click="onRowClick"
     ></Table>
     <div class="search-con search-con-top">
       <Row>
-       
-       
         <Col span="10">
           <Page
             show-total
@@ -33,7 +42,6 @@
             show-sizer
             show-elevator
             size="small"
-           
             :total="courseDataTable.total"
             :page-size="courseDataTable.Pagesize"
             @on-change="changepage"
@@ -52,16 +60,13 @@
 
 <script>
 import "./index.less";
-import  {toDateStr} from "@/libs/tools";
-import { getCoursePageList } from "@/api/course";
+import { toDateStr } from "@/libs/tools";
+// import { getCoursePageList } from "@/api/course";
 import { all, allSettled } from "q";
 import { log } from "util";
- export default {
-  component() {
-   },
-  created() {
-    
-  },
+export default {
+  component() {},
+  created() {},
   data() {
     return {
       tableHeight: window.innerHeight - 250,
@@ -72,74 +77,55 @@ import { log } from "util";
           type: "selection",
           width: 50,
           align: "center",
-          key: "CourseID"
+          key: "ID"
         },
 
         {
           title: "课程名",
-          key: "CourseName",
+          key: "name",
           sortable: true,
-         
+
           ellipsis: true
         },
-  {
+        {
           title: "阶段",
-          key: "CourseName",
+          key: "jd",
           sortable: true,
-          
+
           ellipsis: true
         },
 
         {
           title: "学科",
-          key: "CourseStauts",
+          key: "xk",
           sortable: true,
-          render: (h, params) => {
-            return h(
-              "span",
-              params.row.CourseStauts == 0 ? "未上线" : "已上线"
-            );
-          },
+
           align: "center"
         },
         {
           title: "年级",
-          key: "nianji",
+          key: "nj",
           sortable: true,
-          width: 250,
+
           ellipsis: true,
           align: "center"
         },
         {
           title: "类型",
-          key: "leixin",
+          key: "lx",
           sortable: true,
-          
+
           ellipsis: true,
           align: "center"
         },
-        
+
         {
           title: "创建时间",
           key: "CreateTime",
           sortable: true,
-          align: "center",
-          render: (h, params) => {
-            console.log(this);
-            
-            let t= `${toDateStr(
-                params.row.CreateTime.replace("/Date(", "").replace(")/", ""),
-                "yyyy-MM-dd"
-              )}`
-
-            return h(
-              "span",
-             t
-            );
-          }
+          align: "center"
         },
-        
-      
+
         {
           title: "操作",
           key: "action",
@@ -155,7 +141,7 @@ import { log } from "util";
                 style: {
                   marginRight: "5px",
                   border: "1px solid #ccc",
-                  display:'none'
+                  display: "none"
                 },
                 on: {
                   click: () => {
@@ -174,11 +160,11 @@ import { log } from "util";
                     size: "small"
                   },
                   style: {
-                    marginRight: "5px",//display:'none'
+                    marginRight: "5px" //display:'none'
                   },
                   on: {
                     click: () => {
-                      this.editCourseBtn(params.row.CourseID)
+                      this.editCourseBtn(params.row.CourseID);
                     }
                   }
                 },
@@ -191,8 +177,8 @@ import { log } from "util";
                     type: "error",
                     size: "small"
                   },
-                   style: {
-                    marginRight: "5px",//display:'none'
+                  style: {
+                    marginRight: "5px" //display:'none'
                   },
                   on: {
                     click: a => {
@@ -221,8 +207,18 @@ import { log } from "util";
       selectRow: [],
       CtlonLineCourse: null,
       courseDataTable: {
-        total: 0,
-        data: [],
+        total: 20,
+        data: [
+          {
+            ID: 1,
+            name: "小学语文第一节",
+            jd: "小学",
+            xk: "语文",
+            nj: "一年级",
+            lx: "提高班",
+            CreateTime: "2015-02-23"
+          }
+        ],
         searchData: {
           type: 0,
           CourseName: "",
@@ -247,8 +243,7 @@ import { log } from "util";
             label: "类型",
             value: "CourseType"
           }
-        ],
-        
+        ]
       }
     };
   },
@@ -274,8 +269,8 @@ import { log } from "util";
       const route = {
         name: "editcourse",
         params: {
-          id:id,
-          title:title
+          id: id,
+          title: title
         },
         meta: {
           // title: `动态路由-${id}`
@@ -286,15 +281,6 @@ import { log } from "util";
     getTableData() {
       this.loading = true;
       let p = this.courseDataTable.searchData;
-      getCoursePageList(p)
-        .then(res => {
-          this.courseDataTable.data = res.data.data;
-          this.courseDataTable.total = res.data.total;
-          this.loading = false;
-        })
-        .catch(err => {
-          this.loading = false;
-        });
     },
     bathDel() {
       if (this.selectRow.length == 0) {
@@ -309,18 +295,8 @@ import { log } from "util";
     selectTableChange(rows) {
       this.selectRow = rows;
     },
-    onRowClick(){
+    onRowClick() {},
 
-    },
-    onLineCourse(val) {
-      if (this.selectRow.length == 0) {
-        this.$Message.warning("请选择数据");
-        return false;
-      }
-      this.$Message.success(
-        "上架/下架:" + val + ",选中了" + this.selectRow.length + "项"
-      );
-    },
     ////修改每页显示条数时调用
     pages(num) {
       this.courseDataTable.searchData.Pagesize = num;

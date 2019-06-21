@@ -60,7 +60,7 @@ export default {
           type: "selection",
           width: 50,
           align: "center",
-          key: "CourseID"
+          key: "ID"
         },
         {
           title: "会员名称",
@@ -71,7 +71,7 @@ export default {
         },
         {
           title: "会员卡",
-          key: "CourseName",
+          key: "cardName",
           sortable: true,
           
           ellipsis: true
@@ -79,7 +79,7 @@ export default {
 
         {
           title: "注册时间",
-          key: "CourseStauts",
+          key: "CreateTime",
           sortable: true,
           
           align: "center"
@@ -90,7 +90,10 @@ export default {
       CtlonLineCourse: null,
       DataTable: {
         total: 0,
-        data: [],
+        data: [
+          {ID:1,name:'小萌梦',cardName:'小学语文上册，小学语文下册',CreateTime:'2019-02-12'},
+          {ID:1,name:'大萌梦',cardName:'无',CreateTime:'2019-02-12'},
+        ],
         searchData: {
           type: 0,
           CourseName: "",

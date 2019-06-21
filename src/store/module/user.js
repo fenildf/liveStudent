@@ -88,21 +88,30 @@ export default {
       let _this = this;
       userName = userName.trim()
       return new Promise((resolve, reject) => {
-        login({
-          userName,
-          password
-        }).then(res => {
-          const data = res.data
+        // login({
+        //   userName,
+        //   password
+        // }).then(res => {
+        //   const data = res.data
          
-          if (data.code == "1") {
-            commit('setUserId', data.data.UserId)
-            commit('setUserName', data.data.UserName)
-            commit('setCnName', data.data.CnName)
-          } 
-          resolve(data)
-        }).catch(err => {
-          reject(err)
-        })
+        //   if (data.code == "1") {
+        //     commit('setUserId', data.data.UserId)
+        //     commit('setUserName', data.data.UserName)
+        //     commit('setCnName', data.data.CnName)
+        //   } 
+        //   resolve(data)
+        // }).catch(err => {
+        //   reject(err)
+        // })
+        commit('setUserId', 1)
+        commit('setUserName',"admin")
+        commit('setCnName',"管理员")
+        var data={
+          data:{id:1,setUserId:"admin",setCnName:"admin",content:''},
+          msg:1,
+          code:1
+        }
+        resolve(data)
       }) 
     },
     // 退出登录

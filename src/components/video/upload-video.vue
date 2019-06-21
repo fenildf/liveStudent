@@ -14,9 +14,7 @@
           <FormItem label="课程分类" >
             <Select class="search-col"></Select>
           </FormItem>
-           <FormItem label="课程类型">
-            <Select class="search-col"></Select>
-          </FormItem>
+          
           <FormItem label="关键字">
             <Input class="search-input" placeholder="输入关键字搜索1"/>
             <Button class="search-btn" type="primary">搜索</Button>

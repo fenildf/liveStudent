@@ -1,31 +1,28 @@
 <template>
   <Form :model="formItem" :label-width="80">
-    
     <FormItem label="视频分类">
-      <tree-select style="width: 353px;" check-strictly v-model="CourseTypeTreeDataSelect" :data="CourseTypeTreeData"></tree-select>
+      <Select class="tree-select">
+        <v-jstree
+          :data="treeData"
+         
+          show-checkbox
+          allow-batch
+          whole-row
+          draggable
+        ></v-jstree>
+      </Select>
     </FormItem>
-     <FormItem label="课程类型">
- <Select style="width:353px;"  >
-        <Option>基础</Option>
-        <Option>提高</Option>
-        <Option>冲刺</Option>
-    </Select>
-    </FormItem>
-    
+
     <FormItem label="视频文件">
       <Row>
         <Col span="24" style="width:85px;">
-          <Upload
-        multiple
-        action="//jsonplaceholder.typicode.com/posts/">
-        <Button icon="ios-cloud-upload-outline">Upload files</Button>
-    </Upload>
+          <Upload multiple action="//jsonplaceholder.typicode.com/posts/">
+            <Button icon="ios-cloud-upload-outline">Upload files</Button>
+          </Upload>
         </Col>
-       
       </Row>
-       
     </FormItem>
-    
+
     <FormItem>
       <Button type="primary">提交</Button>
       <Button style="margin-left: 8px" @click="closeBtn">关闭</Button>
@@ -35,18 +32,18 @@
  
 
 <script>
-import TreeSelect from "_c/tree-select";
 import Editor from "_c/editor";
 import { mapMutations } from "vuex";
 import { log } from "util";
 import UploadVideo from "@/components/video/upload-video.vue";
 import { getCourseModel, getCourseTypes } from "@/api/course";
 import { all } from "q";
+import VJstree from "@/components/tree/tree.vue";
 
 export default {
   components: {
     Editor,
-    TreeSelect,
+    VJstree,
     UploadVideo
   },
   computed: {},
@@ -77,12 +74,12 @@ export default {
           align: "center",
           key: "VideoId"
         },
-        
+
         {
           title: "视频名称",
           key: "Title"
         },
-        
+
         {
           title: "状态",
           key: "Status",
@@ -109,7 +106,7 @@ export default {
             return h("span", text);
           }
         },
-         
+
         {
           title: "创建时间",
           key: "CreationTime",
@@ -163,7 +160,94 @@ export default {
         }
       ],
       CourseTypeTreeData: [],
-      CourseTypeTreeDataSelect:[]
+      CourseTypeTreeDataSelect: [],
+      treeData: [
+        {
+          id: 0,
+          text: "小学",
+          value: "0",
+          opened: true,
+          children: [
+            {
+              id: 1,
+              text: "语文",
+              value: "initially selected",
+              opened: true,
+              children: [
+                {
+                  id: 1,
+                  text: "小学语文上册",
+                  value: "initially selected", opened: true,
+                 children: [
+                        {
+                          id: 1,
+                          text: "普通班",
+                          value: "initially selected"
+                        },
+
+                        {
+                          id: 5,
+                          text: "提高班",
+                          value: "custom icon"
+                        },
+                         {
+                          id: 5,
+                          text: "冲刺班",
+                          value: "custom icon"
+                        }
+                      ]
+                },
+
+                {
+                  id: 5,
+                  text: "小学语文下册",
+                  value: "custom icon"
+                }
+              ]
+            },
+
+            {
+              id: 5,
+              text: "数学",
+              value: "custom icon"
+            },
+            {
+              id: 5,
+              text: "英语",
+              value: "custom icon"
+            }
+          ]
+        },
+        {
+          id: 6,
+          text: "初中",
+          value: "6",
+          opened: true,
+          children: [
+            {
+              id: 1,
+              text: "语文",
+              value: "initially selected"
+            },
+
+            {
+              id: 5,
+              text: "数学",
+              value: "custom icon"
+            },
+            {
+              id: 5,
+              text: "英语",
+              value: "custom icon"
+            },
+            {
+              id: 5,
+              text: "物理",
+              value: "custom icon"
+            }
+          ]
+        }
+      ]
     };
   },
   methods: {
@@ -201,7 +285,7 @@ export default {
 
             _this.formItem = res.data.data.courseInfo;
             //console.log( _this.formItem);
-            
+
             //_this.formItem.VideoName= res.data.data.VideoName
           }
         })
@@ -230,10 +314,9 @@ export default {
   margin-bottom: 10px;
 }
 .ivu-upload-list-file {
-    
-    border: 1px solid #ccc;
-    width: 321px;
-    
-    margin-top: 10px;
+  border: 1px solid #ccc;
+  width: 321px;
+
+  margin-top: 10px;
 }
 </style>

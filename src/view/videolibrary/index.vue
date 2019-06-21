@@ -61,48 +61,48 @@ export default {
           type: "selection",
           width: 50,
           align: "center",
-          key: "CourseID"
+          key: "ID"
         },
         {
           title: "视频名称",
           key: "name",
-          sortable: true,
-         
+         // sortable: true,
+          align: "center",
           ellipsis: true
         },
         {
           title: "阶段",
-          key: "CourseName",
-          sortable: true,
-          
+          key: "jd",
+        //  sortable: true,
+           align: "center",
           ellipsis: true
         },
 
         {
           title: "学科",
-          key: "CourseStauts",
+          key: "xk",
           sortable: true,
-          render: (h, params) => {
-            return h(
-              "span",
-              params.row.CourseStauts == 0 ? "未上线" : "已上线"
-            );
-          },
+          // render: (h, params) => {
+          //   return h(
+          //     "span",
+          //     params.row.CourseStauts == 0 ? "未上线" : "已上线"
+          //   );
+          // },
           align: "center"
         },
         {
           title: "年级",
-          key: "nianji",
+          key: "nj",
           sortable: true,
-          width: 250,
+         
           ellipsis: true,
           align: "center"
         },
         {
           title: "类型",
-          key: "leixin",
+          key: "lx",
           sortable: true,
-          width: 250,
+          
           ellipsis: true,
           align: "center"
         },
@@ -111,16 +111,7 @@ export default {
           key: "CreateTime",
           sortable: true,
           align: "center",
-          render: (h, params) => {
-            console.log(this);
-
-            let t = `${toDateStr(
-              params.row.CreateTime.replace("/Date(", "").replace(")/", ""),
-              "yyyy-MM-dd"
-            )}`;
-
-            return h("span", t);
-          }
+          
         },
         {
           title: "操作",
@@ -204,7 +195,9 @@ export default {
       CtlonLineCourse: null,
       DataTable: {
         total: 0,
-        data: [],
+        data: [
+          {ID:1,name:'小学语文上册第一节课',jd:'小学',xk:'语文',nj:'一年级',lx:'提高班',CreateTime:'2018-01-23'}
+        ],
         searchData: {
           type: 0,
           CourseName: "",
@@ -215,30 +208,7 @@ export default {
           endtime: ""
         }
       },
-      pageControler: {
-        searchField: [
-          {
-            label: "阶段",
-            value: "jieudan"
-          },
-          {
-            label: "学科",
-            value: "xueke"
-          },
-          {
-            label: "年级",
-            value: "nianji"
-          },
-          {
-            label: "视频名称",
-            value: "CourseName"
-          },
-          {
-            label: "上传时间",
-            value: "CreateTime"
-          }
-        ]
-      }
+      
     };
   },
   methods: {
