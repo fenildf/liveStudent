@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/course/index",
+    "pages/user/index",
+    "pages/logs/index",
+    "componet/select/select",
+    "pages/course-model/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "/dist/button/index",
+    "Select": "/componet/select/select",
+    "van-search": "/dist/search/index",
+    "van-icon": "/dist/icon/index"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/course/index",
+        "text": "学习视频",
+        "iconPath": "images/video-gray.png",
+        "selectedIconPath": "images/video.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "个人中心",
+        "iconPath": "images/user-gray.png",
+        "selectedIconPath": "images/user.png"
+      }
+    ]
+  }
+}

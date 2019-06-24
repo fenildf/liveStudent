@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+ <view class="flex-wrp" style="flex-direction:column;">
+        <view class="flex-item flex-item-V demo-text-1">dfs</view>
+        <view class="flex-item flex-item-V demo-text-2">df</view>
+        <view class="flex-item flex-item-V demo-text-3"></view>
+      </view>
+  <van-card
+  num="2"
+  tag="标签"
+  price="10.00"
+  desc="描述信息"
+  title="商品标题"
+  thumb="{{ imageURL }}"
+>
+  <view slot="footer">
+    <van-button size="mini">按钮</van-button>
+    <van-button size="mini">按钮</van-button>
+  </view>
+</van-card>
+</view>

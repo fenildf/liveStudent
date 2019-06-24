@@ -1,0 +1,17 @@
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+  <view class='xm-tomatoes _wsy'>
+    <view class='cate-wrap _wsy'>
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class='cate-box _wsy'>
+          <view class='cate-pic _wsy'>
+            <image class='_wsy' src='{{item.icon}}'></image>
+          </view>
+          <view class='cate-txt _wsy'>{{item.text}}</view>
+        </view>
+      </block>
+
+
+
+    </view>
+  </view>
+</scroll-view>

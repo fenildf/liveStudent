@@ -1,0 +1,76 @@
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+  <view class='xm-tomatoes _wsy'>
+    <view class='cate-wrap _wsy'>
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class='cate-box _wsy'>
+          <view class='cate-pic _wsy'>
+            <image class='_wsy' src='{{item.icon}}'></image>
+          </view>
+          <view class='cate-txt _wsy'>{{item.text}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</scroll-view>
+<view>
+  <view>
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" use-action-slot bind:search="onSearch">
+      <view class="searchbtn" slot="action" bind:tap="onSearch">搜索</view>
+    </van-search>
+  </view>
+</view>
+
+<view class='list-view__body _ukPW' >
+  <view class="list-view__item border _ukPW"  bindtap="goToCourseModel">
+    <view class='a'>
+      <view class="xm-album clearfix _YmA">
+        <view style="width:70px;height:70px" class="xm-album-cover rel cover cover _YmA _fd9r">
+          <image class="cover-image _YmA" src="//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg"></image>
+          <view class="xm-album-cover__wrap _fd9r">
+            <view class="mask _fd9r"></view>
+            <view class="play-btn _fd9r"></view>
+          </view>
+        </view>
+        <view class="content _YmA">
+          <h3 class="xm-album__title txt-1 ellipsis _YmA" style="color:#333">异能穿越：狂后云蓝（超赞双播）</h3>
+          <view class="xm-album__subtitle c9 ellipsis _YmA">免费！声音超好听爽文！异能加持，各种吊打</view>
+          <div class="xm-album__info c9 _YmA">
+            <span class="user-channel ellipsis-1 _YmA">
+
+              <van-icon name="manager-o" /> 学习人数 </span>
+            <span class="count _YmA">
+              <i class="xm-icon icon-sound"></i>
+              48</span>
+
+          </div>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="list-view__item border _ukPW">
+    <view class='a'>
+      <view class="xm-album clearfix _YmA">
+        <view style="width:70px;height:70px" class="xm-album-cover rel cover cover _YmA _fd9r">
+          <image class="cover-image _YmA" src="//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg"></image>
+          <view class="xm-album-cover__wrap _fd9r">
+            <view class="mask _fd9r"></view>
+            <view class="play-btn _fd9r"></view>
+          </view>
+        </view>
+        <view class="content _YmA">
+          <h3 class="xm-album__title txt-1 ellipsis _YmA" style="color:#333">异能穿越：狂后云蓝（超赞双播）</h3>
+          <view class="xm-album__subtitle c9 ellipsis _YmA">免费！声音超好听爽文！异能加持，各种吊打</view>
+          <div class="xm-album__info c9 _YmA">
+            <span class="user-channel ellipsis-1 _YmA">
+
+              <van-icon name="manager-o" /> 学习人数 </span>
+            <span class="count _YmA">
+              <i class="xm-icon icon-sound"></i>
+              48</span>
+
+          </div>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<video src='http://140.249.61.231/6775312E57A3E7193B24049BA/03000A05015CA48115586B85B9B6EDE566B3F0-8B85-4EDF-B631-F288E6196994.mp4?ccode=050F&duration=392&expire=18000&psid=99538507e842072c7aebb5d78c0edd04&ups_client_netip=6a25ada6&ups_ts=1561375488&ups_userid=&utid=KdmNFUScWEMCAWolrabo0ANy&vid=XNDIzMzM2MzMxNg%3D%3D&vkey=Ab8d5557cc884eba3282b8b3376d6f7dc&sp=&bc=2&ali_redirect_domain=ykugc.cp31.ott.cibntv.net&ali_redirect_ex_ftag=7bb87c257da5c39c6801d263e4dd48c1bce2b9418e56fdc1&ali_redirect_ex_tmining_ts=1561375499&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=0'></video>
+<view class="kind-list">
+
+  <view class="kind-list-item">
+    <view class="kind-list-item-hd">
+      <view class="kind-list-text">这里是课程标题</view>
+    </view>
+    <view class="kind-list-item-bd kind-list-item-bd-show">
+      <view class="navigator-box  navigator-box-show ">
+        <navigator url="pages/{{page}}/{{page}}" class="navigator">
+          <view class="navigator-text">这里是视频标题(第一节)
+            <span style="float:right;font-size:12px;">播放</span>
+          </view>
+        </navigator>
+
+      </view>
+    </view>
+    <view class="kind-list-item-bd kind-list-item-bd-show">
+      <view class="navigator-box  navigator-box-show ">
+        <navigator url="pages/{{page}}/{{page}}" class="navigator">
+          <view class="navigator-text">这里是视频标题(第二节)
+            <span style="float:right;font-size:12px;">播放</span>
+          </view>
+        </navigator>
+
+      </view>
+    </view>
+     <view class="kind-list-item-bd kind-list-item-bd-show">
+            <view class="navigator-box  navigator-box-show ">
+                <navigator url="pages/{{page}}/{{page}}" class="navigator">
+                  <view class="navigator-text">这里是视频标题(第三节)<span style="float:right;font-size:12px;">播放</span></view>
+                </navigator>
+               
+            </view>
+          </view>
+  </view>
+
+</view>
