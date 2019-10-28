@@ -1,0 +1,14 @@
+<van-card wx:for-items="{{cars}}" wx:key="{{item.id}}"
+  num="{{item.id}}"
+  price="{{item.id}}"
+  desc="{{item.descript}}"
+  title="{{item.title}}"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+/>
+<van-submit-bar
+  price="{{ 3050 }}"
+  button-text="提交订单"
+  bind:submit="onClickButton"
+>
+<van-checkbox >全选</van-checkbox>
+</van-submit-bar>
