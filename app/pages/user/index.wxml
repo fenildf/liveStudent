@@ -1,27 +1,5 @@
-<view class="index">
-  <view class="index-hd">
-    <image class="index-logo" src="http://img4.imgtn.bdimg.com/it/u=1923884893,258217563&fm=26&gp=0.jpg"></image>
-    <view class="index-desc">Jaden-小盼 </view>
-  </view>
-  <view class="index-bd">
-    <view class="kind-list">
-      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-        <view class="kind-list-item">
-          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
-            <view class="kind-list-text">{{item.name}}</view>
-          </view>
-          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
-            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
-              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
-                <navigator url="pages/{{page}}/{{page}}" class="navigator">
-                  <view class="navigator-text">{{page.cardName}} (原价{{page.price}}，折后价{{page.realPrice}})<span style="float:right;font-size:12px;">{{page.endTime}}</span></view>
-                  
-                </navigator>
-              </block>
-            </view>
-          </view>
-        </view>
-      </block>
-    </view>
-  </view>
+<view>
+ 
+ <image class="img" model="widthFix" src="https://7975-yun-jaden-l02kv-1259472370.tcb.qcloud.la/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191028214803.jpg?sign=1338e93826786efc2218397907e536ac&t=1572270508"></image>
+ 
 </view>

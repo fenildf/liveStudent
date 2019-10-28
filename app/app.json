@@ -4,7 +4,8 @@
     "pages/user/index",
     "pages/logs/index",
     "componet/select/select",
-    "pages/course-model/index"
+    "pages/course-model/index",
+    "pages/cars/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -17,13 +18,23 @@
     "van-button": "/dist/button/index",
     "Select": "/componet/select/select",
     "van-search": "/dist/search/index",
-    "van-icon": "/dist/icon/index"
+    "van-icon": "/dist/icon/index",
+    "van-card": "/dist/card/index",
+    "van-submit-bar": "/dist/submit-bar/index",
+    "van-checkbox": "/dist/checkbox/index",
+    "van-checkbox-group": "/dist/checkbox-group/index"
   },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/course/index",
-        "text": "学习视频",
+        "text": "课程精选",
+        "iconPath": "images/video-gray.png",
+        "selectedIconPath": "images/video.png"
+      },
+      {
+        "pagePath": "pages/course/index",
+        "text": "马上学习",
         "iconPath": "images/video-gray.png",
         "selectedIconPath": "images/video.png"
       },

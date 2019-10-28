@@ -51,12 +51,71 @@ Page({
          text: '生物',
          icon: 'http://fdfs.xmcdn.com/group63/M01/B2/54/wKgMcl0Arv-gbwo4AABqDmN0C8Q090.png'
        }
+     ],
+     courseList:[
+       {
+         id:1,
+         title:"异能穿越：狂吼芸兰（）超赞双玻",
+         descript:"免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum:20,
+         img:'//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
+       {
+         id: 1,
+         title: "异能穿越：狂吼芸兰（）超赞双玻",
+         descript: "免费!声音超级甜的小姑娘主播，异能加持，各种吊打，非常好看",
+         studyNum: 20,
+         img: '//imagev2.xmcdn.com/group59/M00/94/36/wKgLeFzoOxaBX1wzAAGulZyb_K8517.jpg'
+       },
      ]
   },
   goToCourseModel: function () {
     console.log(1)
     wx.navigateTo({
-      url: '/pages/course-model/index',
+      //url: '/pages/course-model/index',
+      url:'/pages/cars/index'
     })
   },
   /**

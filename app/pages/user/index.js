@@ -13,14 +13,14 @@ Page({
     list: [
       {
         id: 'view',
-        name: '已购买的会员卡',
+        name: '已购买的课程',
         open: false,
         pages: [
           { cardName: '一年级语文上册',price:110,realPrice:30, endTime: '2019/8/7到期'}
         ]
       }, {
         id: 'content',
-        name: '未购买的会员卡',
+        name: '推荐精品课程',
         open: false,
         pages: [
           { cardName: '二年级语文上册', price: 110, realPrice: 30, endTime: '购买' },
